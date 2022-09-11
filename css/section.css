@@ -1,0 +1,117 @@
+.section {
+    background-color: #fff;
+    margin: 10px 50px;
+    box-shadow: #ddd 2px 2px 5px;
+}
+
+.section__header {
+    border-bottom: 2px solid #eee;
+    padding: 20px;
+    margin: 0;
+}
+
+.section__form {
+    display: flex;
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .section__form {
+        flex-wrap: wrap;
+    }
+}
+
+.section__input {
+    flex-basis: 100px;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 7px;
+    border: 1px solid #ddd;
+}
+
+.section__submitButton {
+    padding: 7px;
+    border: none;
+    background-color: teal;
+    color: #fff;
+    margin-left: 15px;
+}
+
+@media (max-width: 767px) {
+    .section__submitButton {
+        flex-grow: 1;
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}
+
+.section__button:hover {
+    padding: 7px;
+    border: none;
+    background-color: hsl(180, 100%, 27%);
+    color: #fff;
+}
+
+.section__button:active {
+    padding: 7px;
+    border: none;
+    background-color: hsl(180, 100%, 30%);
+    color: #fff;
+}
+
+.section__list {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.section__listItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+}
+
+.section__taskTextContainer--done {
+    text-decoration: line-through;
+}
+
+.section__doneButton {
+    background-color: green;
+    border: none;
+    color: #fff;
+    height: 30px;
+    flex-basis: 30px;
+    flex-shrink: 0;
+}
+
+.section__doneButton:hover {
+    background-color: hsl(120, 100%, 27%);
+}
+
+.section__doneButton:active {
+    background-color: hsl(120, 100%, 30%);
+}
+
+.section__removeButton {
+    background-color: red;
+    border: none;
+    color: #fff;
+    height: 30px;
+    flex-basis: 30px;
+    flex-shrink: 0;
+}
+
+.section__removeButton:hover {
+    background-color: hsl(0, 100%, 65%);
+}
+
+.section__removeButton:active {
+    background-color: hsl(0, 100%, 70%);
+}
+
+.section__taskTextContainer {
+    flex-grow: 1;
+    margin: 0 15px;
+}
+
