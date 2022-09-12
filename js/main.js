@@ -11,9 +11,11 @@
     ];
 
     const addTask = () => {
-        const newTaskContent = document.querySelector(".js-taskContent").value.trim();
+        const newTaskContentElement = document.querySelector(".js-taskContent");
+        const newTaskContent = newTaskContentElement.value.trim();
 
         if (!newTaskContent) {
+            newTaskContentElement.focus();
             return;
         }
 
@@ -28,6 +30,7 @@
         form.addEventListener("submit", (event) => {
             event.preventDefault();
             addTask();
+            form.reset();
             render();
         });
     }
