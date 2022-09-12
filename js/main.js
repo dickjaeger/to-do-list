@@ -17,7 +17,7 @@
         if (!newTaskContent) {
             newTaskContentElement.focus();
             return;
-        }
+        };
 
         tasks.push({
             content: newTaskContent,
@@ -26,6 +26,11 @@
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
+
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
         render();
     };
 
@@ -53,8 +58,8 @@
                     <div class="section__taskTextContainer${task.done ? " section__taskTextContainer--done" : ""}">
                         ${task.content}
                     </div>
-                    <button class="section__removeButton">&#128465</button>
-                </li>`
+                    <button class="section__removeButton js-removeButton">&#128465</button>
+                </li>`;
         };
 
         taskListElement.innerHTML = htmlString;
@@ -63,6 +68,13 @@
         doneButtons.forEach((doneButton, index) => {
             doneButton.addEventListener("click", () => {
                 toggleTaskDone(index);
+            });
+        });
+
+        const removeButtons = document.querySelectorAll(".js-removeButton");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
             });
         });
     };
