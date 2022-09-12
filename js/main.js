@@ -7,7 +7,7 @@
         {
             content: "odrobić zadanie z YouCode",
             done: true,
-        }
+        },
     ];
 
     const addTask = () => {
@@ -21,8 +21,13 @@
 
         tasks.push({
             content: newTaskContent,
-        })
-    }
+        });
+    };
+
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+        render();
+    };
 
     const onFormSubmit = () => {
         const form = document.querySelector(".js-form");
@@ -33,7 +38,7 @@
             form.reset();
             render();
         });
-    }
+    };
 
     const render = () => {
         const taskListElement = document.querySelector(".js-taskList");
@@ -42,13 +47,24 @@
         for (const task of tasks) {
             htmlString +=
                 `<li class="section__listItem">
-                    <button class="section__doneButton"></button>
-                    <div class="section__taskTextContainer">${task.content}</div>
+                    <button class="section__doneButton js-doneButton">
+                        ${task.done ? "&#10004" : ""}
+                    </button>
+                    <div class="section__taskTextContainer${task.done ? " section__taskTextContainer--done" : ""}">
+                        ${task.content}
+                    </div>
                     <button class="section__removeButton">&#128465</button>
                 </li>`
-        }
+        };
 
         taskListElement.innerHTML = htmlString;
+
+        const doneButtons = document.querySelectorAll(".js-doneButton");
+        doneButtons.forEach((doneButton, index) => {
+            doneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
     };
 
     const init = () => {
