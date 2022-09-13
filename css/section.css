@@ -5,7 +5,25 @@
 }
 
 .section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     border-bottom: 2px solid #eee;
     padding: 20px;
     margin: 0;
+}
+
+.section__button {
+    border: none;
+    background-color: #fff;
+    color: teal;
+    transition: 0.2s;
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.section__button:active {
+    color: hsl(180, 100%, 35%);
 }
