@@ -10,18 +10,15 @@
         },
     ];
 
-    const addTask = () => {
-        const newTaskContentElement = document.querySelector(".js-taskContent");
-        const newTaskContent = newTaskContentElement.value.trim();
-
-        if (!newTaskContent) {
-            newTaskContentElement.focus();
+    const addTask = (newTaskContent) => {
+        if (newTaskContent === "") {
             return;
         };
-
-        tasks.push({
-            content: newTaskContent,
-        });
+        
+        tasks = [
+            ...tasks,
+            {content: newTaskContent},
+        ];
 
         render();
     };
@@ -36,14 +33,16 @@
         render();
     };
 
-    const onFormSubmit = () => {
-        const form = document.querySelector(".js-form");
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-            addTask();
-            form.reset();
-        });
+        const newTaskContentElement = document.querySelector(".js-taskContent");
+        const newTaskContent = newTaskContentElement.value.trim();
+
+        addTask(newTaskContent);
+        
+        newTaskContentElement.value = "";
+        newTaskContentElement.focus();
     };
 
     const bindEvents = () => {
@@ -86,7 +85,9 @@
 
     const init = () => {
         render();
-        onFormSubmit();
+
+        const form = document.querySelector(".js-form");
+        form.addEventListener("submit", onFormSubmit);
     };
 
     init();
