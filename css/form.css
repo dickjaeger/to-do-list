@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    padding: 20px;
+}
+
+@media (max-width: 767px) {
+    .form {
+        flex-wrap: wrap;
+    }
+}
+
+.form__input {
+    flex-basis: 100px;
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 7px;
+    border: 1px solid #ddd;
+}
+
+.form__button {
+    padding: 7px;
+    border: none;
+    background-color: teal;
+    color: #fff;
+    margin-left: 15px;
+}
+
+@media (max-width: 767px) {
+    .form__button {
+        flex-grow: 1;
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+}
+
+.form__button:hover {
+    padding: 7px;
+    border: none;
+    background-color: hsl(180, 100%, 27%);
+    color: #fff;
+}
+
+.form__button:active {
+    padding: 7px;
+    border: none;
+    background-color: hsl(180, 100%, 30%);
+    color: #fff;
+}
