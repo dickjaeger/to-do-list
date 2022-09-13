@@ -51,9 +51,7 @@
     };
 
     const setAllTasksReady = () => {
-        tasks.forEach((task) => {
-            task.done = true;
-        });
+        tasks = tasks.map((task) => ({content: task.content, done: true}));
         
         render();
     }
