@@ -99,8 +99,8 @@
         let htmlString = "";
 
         for (const task of tasks) {
-            htmlString += readyTaskHided && task.done ? "" :
-                `<li class="taskList__listItem">
+            htmlString +=
+                `<li class="taskList__listItem ${readyTaskHided && task.done ? "taskList__listItem--hided" : ""}">
                     <button class="taskList__button js-doneButton">
                         ${task.done ? "&#10004" : ""}
                     </button>

@@ -11,6 +11,10 @@
     padding: 7px;
 }
 
+.taskList__listItem--hided {
+    display: none;
+}
+
 .taskList__button {
     background-color: green;
     border: none;
