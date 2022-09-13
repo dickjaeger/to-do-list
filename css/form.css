@@ -34,15 +34,9 @@
 }
 
 .form__button:hover {
-    padding: 7px;
-    border: none;
     background-color: hsl(180, 100%, 27%);
-    color: #fff;
 }
 
 .form__button:active {
-    padding: 7px;
-    border: none;
     background-color: hsl(180, 100%, 30%);
-    color: #fff;
 }
