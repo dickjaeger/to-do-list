@@ -13,6 +13,19 @@
     margin: 0;
 }
 
+@media (max-width: 767px) {
+    .section__header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .section__buttonsContainer {
+        align-self: center;
+    }
+}
+
 .section__button {
     border: none;
     background-color: #fff;
