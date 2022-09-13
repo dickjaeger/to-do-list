@@ -27,3 +27,7 @@
 .section__button:active {
     color: hsl(180, 100%, 35%);
 }
+
+.section__button:disabled {
+    color: #ddd;
+}
