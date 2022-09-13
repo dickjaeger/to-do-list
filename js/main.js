@@ -46,6 +46,7 @@
 
     const toggleHideDoneTask = () => {
         readyTaskHided = !readyTaskHided;
+        render();
     };
 
     const onFormSubmit = (event) => {
@@ -88,7 +89,7 @@
         let htmlString = "";
 
         for (const task of tasks) {
-            htmlString +=
+            htmlString += readyTaskHided && task.done ? "" :
                 `<li class="taskList__listItem">
                     <button class="taskList__button js-doneButton">
                         ${task.done ? "&#10004" : ""}
