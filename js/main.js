@@ -46,13 +46,13 @@
 
     const toggleHideDoneTask = () => {
         readyTaskHided = !readyTaskHided;
-        
+
         render();
     };
 
     const setAllTasksReady = () => {
-        tasks = tasks.map((task) => ({content: task.content, done: true}));
-        
+        tasks = tasks.map((task) => ({ content: task.content, done: true }));
+
         render();
     }
 
@@ -120,7 +120,7 @@
                 <button class="section__button js-toggleHideDoneTask">
                         ${readyTaskHided ? "Pokaż ukończone" : "Ukryj ukończone"}
                 </button>
-                <button ${tasks.every(({done}) => done === true) ? "disabled" : ""} class="section__button js-setAllTasksReady">
+                <button ${tasks.every(({ done }) => done === true) ? "disabled" : ""} class="section__button js-setAllTasksReady">
                     Ukończ wszystkie
                 </button>
             `;
