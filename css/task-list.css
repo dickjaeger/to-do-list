@@ -18,6 +18,7 @@
     height: 30px;
     flex-basis: 30px;
     flex-shrink: 0;
+    transition: 0.2s;
 }
 
 .taskList__button:hover {

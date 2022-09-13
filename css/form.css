@@ -23,6 +23,7 @@
     background-color: teal;
     color: #fff;
     margin-left: 15px;
+    transition: 0.2s;
 }
 
 @media (max-width: 767px) {
@@ -35,6 +36,7 @@
 
 .form__button:hover {
     background-color: hsl(180, 100%, 27%);
+    transform: scale(1.1);
 }
 
 .form__button:active {
