@@ -89,7 +89,9 @@
         };
 
         const setAllTasksReadyButton = document.querySelector(".js-setAllTasksReady");
-        setAllTasksReadyButton.addEventListener("click", setAllTasksReady)
+        if (setAllTasksReadyButton) {
+            setAllTasksReadyButton.addEventListener("click", setAllTasksReady);
+        };
     };
 
     const renderList = () => {
