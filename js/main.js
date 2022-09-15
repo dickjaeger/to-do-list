@@ -10,7 +10,7 @@
         },
     ];
 
-    let readyTaskHided = false;
+    let readyTasksHidden = false;
 
     const addTask = (newTaskContent) => {
         if (newTaskContent === "") {
@@ -45,7 +45,7 @@
     };
 
     const toggleHideDoneTask = () => {
-        readyTaskHided = !readyTaskHided;
+        readyTasksHidden = !readyTasksHidden;
 
         render();
     };
@@ -100,7 +100,7 @@
 
         for (const task of tasks) {
             htmlString +=
-                `<li class="taskList__listItem ${readyTaskHided && task.done ? "taskList__listItem--hided" : ""}">
+                `<li class="taskList__listItem ${readyTasksHidden && task.done ? "taskList__listItem--hided" : ""}">
                     <button class="taskList__button js-doneButton">
                         ${task.done ? "&#10004" : ""}
                     </button>
@@ -120,7 +120,7 @@
             tasks.length === 0 ? "" :
                 `
                 <button class="section__button js-toggleHideDoneTask">
-                        ${readyTaskHided ? "Pokaż ukończone" : "Ukryj ukończone"}
+                        ${readyTasksHidden ? "Pokaż ukończone" : "Ukryj ukończone"}
                 </button>
                 <button ${tasks.every(({ done }) => done === true) ? "disabled" : ""} class="section__button js-setAllTasksReady">
                     Ukończ wszystkie
