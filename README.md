@@ -6,7 +6,7 @@
 
   
 
-> Live demo [_here_](https://dickjaeger.github.io/to-do-list/).
+> Live demo [_here_](https://wojciech-leksza.github.io/to-do-list/).
 
   
 
@@ -118,4 +118,4 @@ Project is: **complete**.
 
   
 
-- Created by [Wojciech Leksza](https://github.com/dickjaeger) - feel free to contact me!
+- Created by [Wojciech Leksza](https://github.com/wojciech-leksza) - feel free to contact me!
